@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  test
 //
-//  Created by SERAP on 11.02.2023.
+//  Created by MURAT on 11.02.2023.
 //
 
 import UIKit
@@ -19,6 +19,8 @@ class ViewController: UIViewController {
         "House" : "WhiteHouse"
     ]
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         printInstructorsName(name: "Murat")
@@ -34,7 +36,48 @@ class ViewController: UIViewController {
     func add(firstNumber : Int ,to secondNumber : Int) -> Int{
         return firstNumber + secondNumber;
     }
+    
+    func forLoopExample(){
+        let languages = ["Swift", "Java", "Go", "JavaScript"]
 
+        for language in languages {
+              print(language)
+        }
+        
+        for i in 0...25{
+            print(i)
+        }
+        
+        //For loop example
+        var randomInts : [Int] = []
+        for s in 0..<100{
+            let randomNumber = Int.random(in: 0...100)
+            randomInts.append(randomNumber)
+            print(s)
+        }
+    }
+    func getMyPhone(on phone:Phone){
+        print(phone.rawValue)
+        
+        switch phone{
+        case .PocoX3NFC :
+            print("This is my current phone")
+        default:
+            print("This is not my phone")
+        }
+        
+    }
+    
+    let myphone = Phone.PocoX3NFC
+    //TODO : Research for this, it is giving some error
+//    getMyPhone(on: .Samsung)
 
+    
 }
 
+public enum Phone : String {
+    case PocoX3NFC = "My current phone"
+    case iPhone11XSXS = "My next phone"
+    case Nokia = "Oldest phone"
+    case Samsung = "Korean classic"
+}
